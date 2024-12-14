@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="light"> <!--classe para modo noturno-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projetinho</title>
+        <link rel="stylesheet" href="./style.css">
+
+        <!-- As tres proximas linhas sao para linkar a fonte do site do google para usarmos no css -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    </head>
+
+<body>
+    <div id="container">
+        <div id="profile">
+            <img src="./assets/oavatar.png" alt="nesse campo usar uma imagem/informaçao alternativa"/> 
+            <p>@Impossilvio.zip</p> 
+        </div>
+
+        <div id="switch" onclick="toggleMode()">
+            <button></button>
+
+            <span></span>
+        </div>
+
+        <ul><!--Lista nao ordenada, usar <ol> para criar lista ordenada (traz numeros junto, ou outra ordenaçao)-->
+            <li><!--item da lista-->
+                <a href="#">Instagram</a> <!--usando #, o texto vira link mas nao leva a lugar nenhum-->
+            </li>
+
+            <li><!--item da lista-->
+                <a href="#">Facebook</a>
+            </li>
+
+            <li><!--item da lista-->
+                <a href="#">Linkedin</a>
+            </li>
+
+            <li><!--item da lista-->
+                <a href="https://www.twitch.tv/impossilvio_" target="_blank"> Twitch</a> <!--Linkei o site e o comando target _blank faz abrir uma nova aba quando clicar-->
+            </li>
+        </ul>
+
+        <div id="social-links">
+            <a href="#">
+                <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+
+            <a href="#">
+                <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+
+            <a href="#">
+                <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+
+            <a href="#">
+                <ion-icon name="logo-twitch"></ion-icon>
+            </a>
+
+        </div>
+
+        <div>
+            <footer>
+                <p id="rodape">Never Fucking Give Up <a href="https://www.youtube.com/watch?v=KPhqU--Mq1A" target="_blank" >👊</a></p>
+            </footer>
+        </div>
+    </div>
+
+    <!--instalaçao dos icones, no site recomenda deixar no final do body-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

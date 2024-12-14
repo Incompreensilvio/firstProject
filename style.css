@@ -1,0 +1,177 @@
+* {/*formatando todo mundo, nesse caso resetando as medidas pra deixar zerado */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+:root{ /*nomes criados, nao é comando, aq sao as cores quando estiver modo noturno-*/
+    --text-color: white;
+    --bg-url:url(./assets/bg-mobile.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.05);
+    --surface-color-hover: rgba(255, 255, 255, 0.02);
+    --highligth-color: rgba(255, 255, 255, 0.1);
+    --switch-bg-url: url(./assets/MoonStars.svg);
+}
+
+.light { /*vai mudar para essas cores quando ativer o modo claro*/
+    --text-color: black;
+    --bg-url:url(./assets/bg-mobile-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highligth-color: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(./assets/Sun.svg);
+    }
+body{
+    /*
+    background-image: url(./assets/bg-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    */
+
+    /*Ou tmb da pra fazer assim*/
+    background: var(--bg-url) no-repeat center top /cover;
+
+}
+ body * { /*o * seleciona tudo que estiver dentro do body*/
+    font-family: 'inter' sans-serif; /* aq formatamos tudo q esta no body com essa fonte que pegamos  no site do google fonts*/
+    color: var(--text-color);
+
+ }
+#container {
+    width: 360px;
+    /*border: 1px solid red;*/
+    margin: auto;
+    padding: 0 24px; /*espaçamento interno superior do container*/
+
+    margin-top: 56px;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+        /* Modos de usar o Margin
+    margin: auto;                    Aq formata os quatro cantos automaticamente
+    margin: auto 0;                 aq formata cima e baixo auto, esquerda e direita 0
+    margin: 56 auto 0 ;             56 cima; dos lados fica auto; baixo fica 0
+    margin: 56 auto 0 auto;         aq descreve todas as bordas, sentido horario começando de cima top; rigth; botton; left*/
+}
+
+#profile { /*esse é o id "pai", o que configurar aq vale para todos que estiverem dentro dele*/
+    text-align: center;
+    padding: 24px;
+}
+#profile img { /*aq foi selecionado apenas a tag img que esta localizada dentro da div com o id profile*/
+    width: 112px;
+    border: 1px solid red;
+    border-radius: 50%;
+}
+
+#profile p {
+    font-weight: 500;
+    font-size: 16px; /*já é o padrao  dos sites, nem precisa por*/
+    line-height: 24px; 
+    margin-top: 8px; /*distancia do paragrafo para a foto*/
+}
+
+#switch {
+    position: relative; /* o botao q é absolute, vai ficar relativo a essa "box", ou seja, vai se mover liuvremente porem só dentro dessa div*/
+    width: 64px;
+
+    margin: 4px auto 30px;
+    
+}
+
+#switch button{
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+
+    position: absolute; /*posiçao absoluta pode deixar ele sobrepor qualquer coisa na tela*/
+    top: 50%;
+    z-index: 1  ;/*setado na camada 1, pra ficar por  cima*/
+    transform: translateY(-50%);
+}
+
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+}
+
+.light #switch button {
+    right: 0;
+    left: initial;
+}
+
+/* linkando a lista*/
+ul {
+    list-style: none;  /*lista sem nenhum estilo*/
+    display: flex; /* deixa os itens da lista flexiveis, eles vao se ajustando*/
+    flex-direction: column; /*organiza os itens da lista em coluna*/
+    gap: 16px;/*espaçamento entre os itens da lista*/
+}
+
+ul li a{
+    /*border: solid red 1px;*/
+
+    display: flex;/*como é texto podeira usar o text-align*/
+    justify-content: center; /*centraliza o texto no meio horizontal eixo x main*/
+    align-items: center; /* alinha no meio vertical, eixo Y*/
+    padding: 16px 26px;
+
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    text-decoration: none;
+    font-weight: bold;
+    
+    transition: background .5s; /*quando a page é atualizadatransiciona para o hover e volta ao norma (muda corzinha do fundo do botao)*/
+}
+
+
+ul li a:hover { /*quando passar o mouse em cima*/
+    background-color: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
+
+}
+
+/*Icones do social*/
+#social-links {
+    padding: 24px 0;
+    justify-content: center; /*alinha no meio*/
+    display: flex;
+    font-size: 24px; /*tamanho dos icones*/
+}
+#social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+#social-links a:hover {
+    background: var(--highligth-color);
+}
+
+p {
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    padding: 24px 0;
+}
