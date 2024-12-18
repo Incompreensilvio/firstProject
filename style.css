@@ -33,7 +33,7 @@ body{
 
     /*Ou tmb da pra fazer assim*/
     background: var(--bg-url) no-repeat center top /cover;
-
+    height: 100vh;
 }
  body * { /*o * seleciona tudo que estiver dentro do body*/
     font-family: 'inter' sans-serif; /* aq formatamos tudo q esta no body com essa fonte que pegamos  no site do google fonts*/
@@ -41,7 +41,8 @@ body{
 
  }
 #container {
-    width: 360px;
+    width: 100%;
+    max-width: 588px;
     /*border: 1px solid red;*/
     margin: auto;
     padding: 0 24px; /*espaçamento interno superior do container*/
@@ -93,6 +94,12 @@ body{
     top: 50%;
     z-index: 1  ;/*setado na camada 1, pra ficar por  cima*/
     transform: translateY(-50%);
+
+    animation: slide-back 0.4s ;
+}
+
+#switch button:hover {
+    outline: 8px solid var(--highligth-color);
 }
 
 #switch span {
@@ -107,8 +114,7 @@ body{
 }
 
 .light #switch button {
-    right: 0;
-    left: initial;
+   animation: slide-in 0.4s forwards;
 }
 
 /* linkando a lista*/
@@ -174,4 +180,32 @@ p {
     text-align: center;
     font-size: 14px;
     padding: 24px 0;
+}
+ @media (min-width: 700px) {
+    :root {
+        --bg-url:url(./assets/bg-desktop.jpg);
+    }
+
+    .light{
+        --bg-url: url(./assets/bg-desktop-light.jpg)
+    }
+ }
+
+
+ /* animacoes*/
+
+@keyframes slide-in {
+    from {
+        left: 0;
+    }to{
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }to{
+        left: 0;
+    }
 }
