@@ -63,7 +63,7 @@ body{
 }
 #profile img { /*aq foi selecionado apenas a tag img que esta localizada dentro da div com o id profile*/
     width: 112px;
-    border: 1px solid red;
+   /* border: 1px solid red;*/
     border-radius: 50%;
 }
 
