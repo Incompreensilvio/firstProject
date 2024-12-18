@@ -1,1 +1,0 @@
-Eai! Criei este projeto com base no curso da Rocketseat, com o objetivo de relembrar e aprimorar meus conhecimentos em programação web. Se você tiver alguma dica ou sugestão sobre esse tema, fico aberto a críticas construtivas.
